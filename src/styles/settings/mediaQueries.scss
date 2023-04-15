@@ -1,0 +1,16 @@
+$mobileMax: 768px;
+$tabletMin: 769px;
+$tabletMax: 1023px;
+$laptopMin: 1024px;
+$laptopMax: 1311px;
+$desktopMin: 1312px;
+
+$onlyMobile: "only screen and (max-width: " + $mobileMax + ")";
+$onlyTablet: "only screen and (min-width: " + $tabletMin + ") AND (max-width: " +
+  $tabletMax + ")";
+$onlyLaptop: "only screen and (min-width: " + $laptopMin + ") AND (max-width: " +
+  $laptopMax + ")";
+$onlyDesktop: "only screen and (min-width: " + $desktopMin + ")";
+
+$fromTablet: "only screen and (min-width: " + $tabletMin + ")";
+$fromLaptop: "only screen and (min-width: " + $laptopMin + ")";

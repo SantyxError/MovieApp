@@ -1,0 +1,55 @@
+@import "../../styles/settings/mediaQueries.scss";
+
+.navbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-m);
+  color: var(--white);
+  background-color: var(--black);
+
+  @media #{$fromLaptop} {
+  }
+}
+
+.logo {
+  width: 3rem;
+}
+
+.menu {
+  position: absolute;
+  top: 4rem;
+  right: 0;
+  padding: var(--space-m) var(--space-2xl);
+  background-color: var(--gray-8);
+
+  @media #{$fromLaptop} {
+    display: flex;
+    gap: var(--space-m);
+  }
+}
+
+.menuIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.searchIcon {
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+.iconsWrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-l);
+}
+
+.searchBoxInput {
+  position: absolute;
+  top: 5rem;
+  right: 0rem;
+  width: 15rem;
+  padding: var(--space-xs) var(--space-m);
+}
