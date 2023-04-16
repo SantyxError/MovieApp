@@ -14,42 +14,47 @@
 }
 
 .logo {
-  width: 3rem;
+  width: var(--size-3xl);
 }
 
-.menu {
-  position: absolute;
-  top: 4rem;
-  right: 0;
-  padding: var(--space-m) var(--space-2xl);
-  background-color: var(--gray-8);
+.searchWrapper {
+  display: flex;
+  height: var(--size-xl);
+}
 
+.menuWrapper {
   @media #{$fromLaptop} {
     display: flex;
-    gap: var(--space-m);
+    gap: var(--space-3xl);
+    align-items: center;
   }
 }
 
-.menuIcon {
-  width: 2.5rem;
-  height: 2.5rem;
-}
-
-.searchIcon {
-  width: 1.7rem;
-  height: 1.7rem;
-}
-
-.iconsWrapper {
-  display: flex;
-  align-items: center;
-  gap: var(--space-l);
-}
-
-.searchBoxInput {
-  position: absolute;
-  top: 5rem;
-  right: 0rem;
+.searchBox {
   width: 15rem;
-  padding: var(--space-xs) var(--space-m);
+  border-top-left-radius: var(--size-xs);
+  border-bottom-left-radius: var(--size-xs);
+  padding: var(--size-2xs);
+  border-style: none;
+
+  &:focus-visible {
+    outline: unset;
+  }
+}
+
+.searchButton {
+  background-color: var(--purple-4);
+  padding: var(--size-2xs) var(--size-xs);
+  border-top-right-radius: var(--size-xs);
+  border-bottom-right-radius: var(--size-xs);
+  border: unset;
+}
+
+.menu {
+  display: none;
+
+  @media #{$fromLaptop} {
+    display: flex;
+    gap: var(--space-3xl);
+  }
 }
