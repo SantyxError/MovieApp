@@ -58,3 +58,11 @@
     gap: var(--space-3xl);
   }
 }
+
+.item {
+  @media #{$fromLaptop} {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
