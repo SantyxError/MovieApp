@@ -1,0 +1,46 @@
+@import "../../styles/settings/mediaQueries.scss";
+
+.film {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--purple-8);
+  width: 80%;
+}
+
+.imgWrapper {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.poster {
+  width: 100%;
+}
+
+.vote {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: green;
+  padding: var(--size-s) var(--size-l);
+  text-align: center;
+  font-weight: bold;
+}
+
+.dataWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-m) var(--space-s);
+}
+
+.infoButton {
+  background-color: var(--purple-4);
+  padding: var(--size-xs);
+}
+
+.dataFilm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

@@ -1,0 +1,44 @@
+.loader {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.text {
+  margin: var(--space-m) auto;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.filmStrip {
+  position: relative;
+  width: var(--size-4xl);
+  height: var(--size-5xl);
+  background: var(--white);
+  z-index: 1;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    height: 120%;
+    border-left: 5px dashed var(--gray-9);
+    animation: roll 20ms infinite;
+  }
+  &:before {
+    left: 5px;
+  }
+  &:after {
+    right: 5px;
+  }
+}
+
+@keyframes roll {
+  0% {
+    top: 0px;
+  }
+  100% {
+    top: -15px;
+  }
+}
