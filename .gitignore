@@ -4,3 +4,5 @@ pacts
 
 # Editor directories and files
 .vscode/*
+
+.env.*
