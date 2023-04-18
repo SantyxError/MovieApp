@@ -11,7 +11,7 @@ export const TopFilms = () => {
   
   const key = import.meta.env.VITE_API_KEY;
   const baseUrl = import.meta.env.VITE_BASE_URL;
-  const url = `${baseUrl}/movie/top_rated?include_video=true&api_key=${key}&language=es-ES`;
+  const url = `${baseUrl}/movie/top_rated?include_video=true&api_key=${key}&language=es-ES&sort_by=popularity.desc&page=1`;
 
   const imgUrl = import.meta.env.VITE_IMG_BASE;
 
