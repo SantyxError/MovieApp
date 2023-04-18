@@ -50,9 +50,12 @@ export const DiscoverFilms = () => {
 
   return (
     <section className={styles.container}>
+       <h2 className={styles.title}>Descubrir Películas</h2>
+       <div className={styles.filmContainer}>
       {data.results.map((film) => {
         return <FilmCard imgUrl={imgUrl} film={film} />;
       })}
+       </div>
     </section>
   );
 };

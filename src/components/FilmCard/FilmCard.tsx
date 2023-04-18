@@ -16,8 +16,8 @@ export const FilmCard: FC<Props> = ({ imgUrl, film }) => {
       </div>
       <div className={styles.dataWrapper}>
         <div className={styles.dataFilm}>
-          <span>{film.title}</span>
-          <span>{film.release_date}</span>
+          <span className={styles.filmTitle}>{film.title}</span>
+          <span className={styles.filmDate}>{film.release_date}</span>
         </div>
         <button className={styles.infoButton}>+ INFO</button>
       </div>
