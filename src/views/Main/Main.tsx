@@ -3,6 +3,7 @@ import { Navbar } from "../../components/Navbar/Navbar";
 import styles from "./Main.module.scss";
 import { DiscoverFilms } from "../DiscoverFilms/DiscoverFilms";
 import { TopFilms } from "../TopFilms/TopFilms";
+import { PopularSeries } from "../PopularSeries/PopularSeries";
 
 export const Main = () => {
   return (
@@ -11,7 +12,9 @@ export const Main = () => {
       <main className={styles.main}>
        
         {/* <DiscoverFilms /> */}
-        <TopFilms/>
+                <PopularSeries/>
+        {/* <TopFilms/> */}
+
       </main>
       <footer>footer</footer>
       <BottomNavbar />

@@ -1,0 +1,33 @@
+@import "../../styles/settings/mediaQueries.scss";
+
+
+.container {
+  justify-items: center;
+  max-width: 100vw;
+
+}
+
+.title{
+  width: 100%;
+  padding: var(--size-l);
+  background-color: var(--purple-8);
+  color: var(--white);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.filmContainer{
+  display: grid;
+  justify-items: center;
+  padding: var(--space-l);
+  max-width: 100vw;
+  color: var(--white);
+}
+
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: var(--white);
+}
