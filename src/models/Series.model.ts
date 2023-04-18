@@ -7,16 +7,16 @@ export interface Series {
 
 export interface Serie {
   poster_path: string | null;
-  popularity:number;
+  popularity: number;
   id: number;
-  backdrop_path: string|null;
+  backdrop_path: string | null;
   vote_average: number;
-  overview:string;
+  overview: string;
   first_air_date: string;
-  origin_country:  Array<string>;
-  genre_ids:  Array<number>;
+  origin_country: Array<string>;
+  genre_ids: Array<number>;
   original_language: string;
   vote_count: number;
   name: string;
-  original_name:string;
+  original_name: string;
 }

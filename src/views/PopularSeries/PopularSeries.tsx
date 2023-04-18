@@ -11,7 +11,7 @@ export const PopularSeries = () => {
   
   const key = import.meta.env.VITE_API_KEY;
   const baseUrl = import.meta.env.VITE_BASE_URL;
-  const url = `${baseUrl}/discover/tv?api_key=${key}&language=es-ES&timezone=Europe%2FMadrid&sort_by=popularity.desc&page=1&include_null_first_air_dates=false&with_watch_monetization_types=flatrate&with_status=0&with_type=0`;
+  const url = `${baseUrl}/discover/tv?api_key=${key}&language=es-ES&sort_by=popularity.desc&page=1&with_original_language=es|en`;
 
   const imgUrl = import.meta.env.VITE_IMG_BASE;
 
@@ -53,7 +53,7 @@ export const PopularSeries = () => {
 
   return (
     <section className={styles.container}>
-    <h2 className={styles.title}>Series Populares</h2>
+    <h2 className={styles.title}>Populares en TV</h2>
     <div className={styles.filmContainer}>
    {data.results.map((serie) => {
      return <SerieCard imgUrl={imgUrl} serie={serie} />;

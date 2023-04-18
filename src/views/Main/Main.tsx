@@ -5,6 +5,7 @@ import { DiscoverFilms } from "../DiscoverFilms/DiscoverFilms";
 import { TopFilms } from "../TopFilms/TopFilms";
 import { PopularSeries } from "../PopularSeries/PopularSeries";
 import { PopularFilms } from "../PopularFilms/PopularFilms";
+import { Outlet } from "react-router-dom";
 
 export const Main = () => {
   return (
@@ -12,10 +13,7 @@ export const Main = () => {
       <Navbar />
       <main className={styles.main}>
 
-        <DiscoverFilms />
-        {/* <PopularFilms/> */}
-        {/* <PopularSeries/> */}
-        {/* <TopFilms/> */}
+      <Outlet/>
 
       </main>
       <footer>footer</footer>

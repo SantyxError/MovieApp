@@ -11,7 +11,7 @@ export const DiscoverFilms = () => {
   const key = import.meta.env.VITE_API_KEY;
   const baseUrl = import.meta.env.VITE_BASE_URL;
   // const url = `${baseUrl}/discover/movie?sort_by=popularity.desc&api_key=${key}&language=es-ES`;
-  const url = `${baseUrl}/movie/now_playing?api_key=${key}&language=es-ES`
+  const url = `${baseUrl}/movie/now_playing?api_key=${key}&language=es-ES&sort_by=popularity.desc&page=1`
 
   const imgUrl = import.meta.env.VITE_IMG_BASE;
 
