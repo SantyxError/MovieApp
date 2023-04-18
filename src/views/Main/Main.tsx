@@ -8,6 +8,7 @@ export const Main = () => {
     <div className={styles.container}>
       <Navbar />
       <main className={styles.main}>
+       
         <DiscoverFilms />
       </main>
       <footer>footer</footer>
