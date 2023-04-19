@@ -1,0 +1,15 @@
+@import "../../styles/settings/mediaQueries.scss";
+
+
+.container{
+  background-color: var(--gray-9);
+  padding-bottom: var(--size-l);
+
+}
+
+.text{
+  color: var(--white);
+  text-align: center;
+  padding: var(--size-l);
+
+}
