@@ -26,14 +26,24 @@
   position: absolute;
   top: 0;
   right: 0;
-  width:25%;
+  width:35%;
   background-color: green;
-  padding: var(--size-s) var(--size-l);
+  padding: var(--size-xs) var(--size-s);
   text-align: center;
   font-weight: bold;
   font-size: var(--size-l);
   box-shadow: 0px 5px 10px 5px rgba(0,0,0,0.75);
   border-top-right-radius: var(--size-m);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--size-s);
+}
+
+.icon{
+  width: var(--size-m);
+  height: var(--size-m);
+
 }
 
 .dataWrapper {
