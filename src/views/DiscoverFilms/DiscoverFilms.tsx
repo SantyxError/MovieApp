@@ -51,7 +51,7 @@ export const DiscoverFilms = () => {
 
   return (
     <section className={styles.container}>
-       <h2 className={styles.title}>Últimas Pelculas</h2>
+       <h2 className={styles.title}>Últimas Películas</h2>
        <div className={styles.filmContainer}>
       {data.results.map((film) => {
         return <FilmCard imgUrl={imgUrl} film={film} />;
