@@ -12,9 +12,8 @@ export const Main = () => {
     <div className={styles.container}>
       <Navbar />
       <main className={styles.main}>
-
       <Outlet/>
-
+    
       </main>
       <footer>footer</footer>
       <BottomNavbar />

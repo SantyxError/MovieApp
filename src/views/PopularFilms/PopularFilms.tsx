@@ -5,8 +5,6 @@ import { FilmCard } from "../../components/FilmCard/FilmCard";
 import { Spinner } from "../../components/Spinner/Spinner";
 
 
-
-
 export const PopularFilms = () => {
   const [data, setData] = useState<Films | undefined>(undefined);
   const [isLoading, setIsLoading] = useState<boolean>(false);

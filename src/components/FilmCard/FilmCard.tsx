@@ -1,6 +1,7 @@
 import { FC } from "react";
 import styles from "./FilmCard.module.scss";
 import { Film } from "../../models/Films.model";
+import { formatDate } from "../_utils/formatDate";
 
 interface Props {
   imgUrl: string;
@@ -17,7 +18,7 @@ export const FilmCard: FC<Props> = ({ imgUrl, film }) => {
       <div className={styles.dataWrapper}>
         <div className={styles.dataFilm}>
           <span className={styles.filmTitle}>{film.title}</span>
-          <span className={styles.filmDate}>{film.release_date}</span>
+          <span className={styles.filmDate}>{formatDate(film.release_date)}</span>
         </div>
         <button className={styles.infoButton}>+ INFO</button>
       </div>

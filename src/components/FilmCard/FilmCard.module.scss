@@ -3,10 +3,11 @@
 .film {
   display: flex;
   flex-direction: column;
-  background-color: var(--purple-8);
+  background-color: var(--gray-9);
   width: 90%;
   margin-bottom: var(--space-3xl);
   box-shadow: 0px 5px 10px 5px rgba(0,0,0,0.75);
+  border-radius: var(--size-m);
 }
 
 .imgWrapper {
@@ -17,6 +18,8 @@
 
 .poster {
   width: 100%;
+  border-top-left-radius: var(--size-m);
+  border-top-right-radius: var(--size-m);
 }
 
 .vote {
@@ -30,6 +33,7 @@
   font-weight: bold;
   font-size: var(--size-l);
   box-shadow: 0px 5px 10px 5px rgba(0,0,0,0.75);
+  border-top-right-radius: var(--size-m);
 }
 
 .dataWrapper {
@@ -42,7 +46,7 @@
 }
 
 .infoButton {
-  background-color: var(--purple-4);
+  background-color: var(--blue-6);
   padding: var(--size-xs);
   width: 90%;
   border-radius: var(--size-s);
