@@ -3,6 +3,7 @@ import styles from "./PopularFilms.module.scss";
 import { Films } from "../../models/Films.model";
 import { FilmCard } from "../../components/FilmCard/FilmCard";
 import { Spinner } from "../../components/Spinner/Spinner";
+import { MainFooter } from "../../components/MainFooter/MainFooter";
 
 
 export const PopularFilms = () => {
@@ -57,6 +58,7 @@ export const PopularFilms = () => {
         return <FilmCard imgUrl={imgUrl} film={film} />;
       })}
        </div>
+       <MainFooter/>
     </section>
   )
 }

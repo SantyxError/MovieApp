@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Films } from "../../models/Films.model";
 import { FilmCard } from "../../components/FilmCard/FilmCard";
 import { Spinner } from "../../components/Spinner/Spinner";
+import { MainFooter } from "../../components/MainFooter/MainFooter";
 
 
 export const TopFilms = () => {
@@ -59,6 +60,7 @@ export const TopFilms = () => {
      return <FilmCard imgUrl={imgUrl} film={film} />;
    })}
     </div>
+    <MainFooter/>
  </section>
   )
 }

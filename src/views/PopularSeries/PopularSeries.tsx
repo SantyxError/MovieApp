@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Series } from "../../models/Series.model";
 import { SerieCard } from "../../components/SerieCard/SerieCard";
 import { Spinner } from "../../components/Spinner/Spinner";
+import { MainFooter } from "../../components/MainFooter/MainFooter";
 
 
 export const PopularSeries = () => {
@@ -59,6 +60,7 @@ export const PopularSeries = () => {
      return <SerieCard imgUrl={imgUrl} serie={serie} />;
    })}
     </div>
+    <MainFooter/>
  </section>
   )
 }
