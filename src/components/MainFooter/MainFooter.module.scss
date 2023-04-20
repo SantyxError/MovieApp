@@ -2,8 +2,10 @@
 
 
 .container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--gray-9);
-  padding-bottom: var(--size-l);
 
 }
 

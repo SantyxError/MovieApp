@@ -60,6 +60,15 @@
   padding: var(--size-xs);
   width: 90%;
   border-radius: var(--size-s);
+  transition: all 0.3s;
+  @media #{$fromLaptop} {
+    &:hover {
+      cursor: pointer;
+      color: var(--blue-8);
+      background-color: var(--blue-4);
+      transform: scale(1.05);
+    }
+  }
 }
 
 .dataFilm {

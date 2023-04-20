@@ -26,6 +26,11 @@
   font-size: var(--size-m);
 }
 
+.item:active{
+  text-decoration: underline;
+  color: rgb(216, 198, 75);
+}
+
 .icon {
   width: var(--size-xl);
   height: var(--size-xl);
