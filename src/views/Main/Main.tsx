@@ -11,9 +11,8 @@ export const Main = (): ReactElement => {
       <Navbar />
       <main className={styles.main}>
         <Outlet />
-
-        <Footer />
       </main>
+      <Footer />
       <BottomNavbar />
     </div>
   );
