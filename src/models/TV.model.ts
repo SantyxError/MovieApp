@@ -1,11 +1,11 @@
-export interface Series {
+export interface DiscoverTV {
   page: number;
-  results: Array<Serie>;
+  results: Array<TV>;
   total_pages: number;
   total_results: number;
 }
 
-export interface Serie {
+export interface TV {
   poster_path: string | null;
   popularity: number;
   id: number;

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, ReactElement } from "react";
 import styles from "./FilmCard.module.scss";
 import { Film } from "../../models/Films.model";
 import { formatDate } from "../_utils/formatDate";
@@ -10,7 +10,7 @@ interface Props {
   film: Film;
 }
 
-export const FilmCard: FC<Props> = ({ imgUrl, film }) => {
+export const FilmCard: FC<Props> = ({ imgUrl, film }): ReactElement => {
   return (
     <div className={styles.film}>
       <div className={styles.imgWrapper}>
@@ -23,7 +23,9 @@ export const FilmCard: FC<Props> = ({ imgUrl, film }) => {
       <div className={styles.dataWrapper}>
         <div className={styles.dataFilm}>
           <span className={styles.filmTitle}>{film.title}</span>
-          <span className={styles.filmDate}>{formatDate(film.release_date)}</span>
+          <span className={styles.filmDate}>
+            {formatDate(film.release_date)}
+          </span>
         </div>
         <button className={styles.infoButton}>+ INFO</button>
       </div>

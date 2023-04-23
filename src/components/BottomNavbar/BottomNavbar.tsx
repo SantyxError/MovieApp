@@ -6,27 +6,27 @@ import {
   filmOutline,
   tvOutline,
 } from "ionicons/icons";
+import { ReactElement } from "react";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 
-export const BottomNavbar = () => {
-
+export const BottomNavbar = (): ReactElement => {
   const navigate: NavigateFunction = useNavigate();
 
-  const navigateToHome = () => {
-    navigate("/")
-  }
+  const navigateToHome = (): void => {
+    navigate("/");
+  };
 
-  const navigateToFilms = () => {
-    navigate("/peliculas")
-  }
+  const navigateToFilms = (): void => {
+    navigate("/peliculas");
+  };
 
-  const navigateToTV = () => {
-    navigate("/tv")
-  }
+  const navigateToTV = (): void => {
+    navigate("/tv");
+  };
 
-  const navigateToTop = () => {
-    navigate("/top")
-  }
+  const navigateToTop = (): void => {
+    navigate("/top");
+  };
 
   return (
     <ul className={styles.menu}>

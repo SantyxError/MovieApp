@@ -1,5 +1,3 @@
-export const formatDate = (filmDate:string) =>{
-
-  return filmDate.split('-')[0]
-
-}
+export const formatDate = (filmDate: string): string => {
+  return filmDate.split("-")[0];
+};

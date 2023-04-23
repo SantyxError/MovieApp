@@ -3,28 +3,26 @@ import logo from "../../assets/img/logo.png";
 import { IonIcon } from "@ionic/react";
 import { search } from "ionicons/icons";
 import { useNavigate } from "react-router-dom";
+import { ReactElement } from "react";
 
-export const Navbar = () => {
+export const Navbar = (): ReactElement => {
+  const navigate = useNavigate();
 
-const navigate = useNavigate();
+  const navigateToHome = (): void => {
+    navigate("/");
+  };
 
-  const navigateToHome = () => {
-    navigate("/")
-  }
+  const navigateToFilms = (): void => {
+    navigate("/peliculas");
+  };
 
-  const navigateToFilms = () => {
-    navigate("/peliculas")
-  }
+  const navigateToTV = (): void => {
+    navigate("/tv");
+  };
 
-  const navigateToTV = () => {
-    navigate("/tv")
-  }
-
-  const navigateToTop = () => {
-    navigate("/top")
-  }
-
-
+  const navigateToTop = (): void => {
+    navigate("/top");
+  };
 
   return (
     <nav className={styles.navbar}>
@@ -32,10 +30,18 @@ const navigate = useNavigate();
 
       <div className={styles.menuWrapper}>
         <ul className={styles.menu}>
-          <li className={styles.item} onClick={navigateToHome}>Últimas Películas</li>
-          <li className={styles.item}onClick={navigateToFilms}>Películas más Populares</li>
-          <li className={styles.item}onClick={navigateToTV}>Programas más Populares</li>
-          <li className={styles.item}onClick={navigateToTop}>Películas más Valoradas</li>
+          <li className={styles.item} onClick={navigateToHome}>
+            Últimas Películas
+          </li>
+          <li className={styles.item} onClick={navigateToFilms}>
+            Películas más Populares
+          </li>
+          <li className={styles.item} onClick={navigateToTV}>
+            Programas más Populares
+          </li>
+          <li className={styles.item} onClick={navigateToTop}>
+            Películas más Valoradas
+          </li>
         </ul>
 
         <form className={styles.searchWrapper}>

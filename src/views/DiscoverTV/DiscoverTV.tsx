@@ -1,16 +1,16 @@
+import styles from "./DiscoverTV.module.scss";
 import { ReactElement, useEffect, useState } from "react";
-import styles from "./DiscoverFilms.module.scss";
-import { Films } from "../../models/Films.model";
-import { FilmCard } from "../../components/FilmCard/FilmCard";
+import { DiscoverTV as DiscoverTVModel } from "../../models/TV.model";
+import { TVCard } from "../../components/TVCard/TVCard";
 import { Spinner } from "../../components/Spinner/Spinner";
 
-export const DiscoverFilms = (): ReactElement => {
-  const [data, setData] = useState<Films | undefined>(undefined);
+export const DiscoverTV = (): ReactElement => {
+  const [data, setData] = useState<DiscoverTVModel | undefined>(undefined);
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const key: string = import.meta.env.VITE_API_KEY;
   const baseUrl: string = import.meta.env.VITE_BASE_URL;
-  const url: string = `${baseUrl}/movie/now_playing?api_key=${key}&language=es-ES&sort_by=popularity.desc&page=1`;
+  const url: string = `${baseUrl}/discover/tv?api_key=${key}&language=es-ES&sort_by=popularity.desc&page=1&with_original_language=es|en`;
 
   const imgUrl: string = import.meta.env.VITE_IMG_BASE;
 
@@ -50,10 +50,10 @@ export const DiscoverFilms = (): ReactElement => {
 
   return (
     <section className={styles.container}>
-      <h2 className={styles.title}>Últimas Películas</h2>
+      <h2 className={styles.title}>Populares en TV</h2>
       <div className={styles.filmContainer}>
-        {data.results.map((film) => {
-          return <FilmCard imgUrl={imgUrl} film={film} />;
+        {data.results.map((tv) => {
+          return <TVCard imgUrl={imgUrl} tv={tv} />;
         })}
       </div>
     </section>
