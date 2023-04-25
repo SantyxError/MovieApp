@@ -8,8 +8,10 @@
   },
   "dependencies": {
     "@ionic/react": "^7.0.2",
+    "@types/pg": "^8.6.6",
     "ionicons": "^7.1.0",
     "isomorphic-fetch": "^3.0.0",
+    "pg": "^8.10.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0"
