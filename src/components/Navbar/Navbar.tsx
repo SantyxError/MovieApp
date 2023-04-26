@@ -4,8 +4,14 @@ import { IonIcon } from "@ionic/react";
 import { search } from "ionicons/icons";
 import { useNavigate } from "react-router-dom";
 import { ReactElement } from "react";
+import { LoginButton } from "../LoginButton/LoginButton";
+import { LogoutButton } from "../LogoutButton /LogoutButton";
+import { useAuth0 } from "@auth0/auth0-react";
 
 export const Navbar = (): ReactElement => {
+
+  const {user,isAuthenticated} = useAuth0()
+  
   const navigate = useNavigate();
 
   const navigateToHome = (): void => {
@@ -27,7 +33,8 @@ export const Navbar = (): ReactElement => {
   return (
     <nav className={styles.navbar}>
       <img src={logo} alt="movie app logo" className={styles.logo} />
-
+      <LoginButton />
+      <LogoutButton/>
       <div className={styles.menuWrapper}>
         <ul className={styles.menu}>
           <li className={styles.item} onClick={navigateToHome}>
@@ -39,9 +46,11 @@ export const Navbar = (): ReactElement => {
           <li className={styles.item} onClick={navigateToTV}>
             Programas más Populares
           </li>
+          {isAuthenticated &&
           <li className={styles.item} onClick={navigateToTop}>
             Películas más Valoradas
           </li>
+          }
         </ul>
 
         <form className={styles.searchWrapper}>
