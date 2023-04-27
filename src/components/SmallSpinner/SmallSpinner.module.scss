@@ -1,0 +1,16 @@
+.spinner {
+	pointer-events: none;
+	width: var(--size-l);
+	height: var(--size-l);
+	border: 3px solid transparent;
+	border-color: #eee;
+	border-top-color: #3E67EC;
+	border-radius: 50%;
+	animation: loadingspin 1s linear infinite;
+}
+
+@keyframes loadingspin {
+	100% {
+		transform: rotate(360deg)
+	}
+}

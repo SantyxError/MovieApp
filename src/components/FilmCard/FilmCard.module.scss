@@ -43,7 +43,18 @@
 .icon{
   width: var(--size-m);
   height: var(--size-m);
+}
 
+.favoriteButton {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: var(--space-s);
+  background-color: var(--blue-6);
+
+  &:hover{
+    cursor: pointer;
+  }
 }
 
 .dataWrapper {
