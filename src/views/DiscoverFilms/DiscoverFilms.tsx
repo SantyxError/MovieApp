@@ -3,6 +3,7 @@ import styles from "./DiscoverFilms.module.scss";
 import { Films } from "../../models/Films.model";
 import { FilmCard } from "../../components/FilmCard/FilmCard";
 import { Spinner } from "../../components/Spinner/Spinner";
+import { Hero } from "../../components/Hero/Hero";
 
 export const DiscoverFilms = (): ReactElement => {
   const [data, setData] = useState<Films | undefined>(undefined);
@@ -51,9 +52,10 @@ export const DiscoverFilms = (): ReactElement => {
   return (
     <section className={styles.container}>
       <h2 className={styles.title}>Últimas Películas</h2>
+      <Hero/>
       <div className={styles.filmContainer}>
         {data.results.map((film) => {
-          return <FilmCard imgUrl={imgUrl} film={film} />;
+          return <FilmCard imgUrl={imgUrl} film={film} key={film.id}/>;
         })}
       </div>
     </section>

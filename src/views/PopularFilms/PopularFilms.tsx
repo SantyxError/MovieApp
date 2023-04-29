@@ -53,7 +53,7 @@ export const PopularFilms = (): ReactElement => {
       <h2 className={styles.title}>Películas Populares</h2>
       <div className={styles.filmContainer}>
         {data.results.map((film) => {
-          return <FilmCard imgUrl={imgUrl} film={film} />;
+          return <FilmCard imgUrl={imgUrl} film={film} key={film.id}/>;
         })}
       </div>
     </section>

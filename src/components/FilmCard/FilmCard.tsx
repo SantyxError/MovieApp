@@ -46,7 +46,7 @@ export const FilmCard: FC<Props> = ({ imgUrl, film }): ReactElement => {
         <img src={imgUrl + film.poster_path} className={styles.poster} />
         <div className={styles.vote}>
           <IonIcon icon={star} className={styles.icon} />
-          {film.vote_average}
+          {film.vote_average.toFixed(1)}
         </div>
 
       {isAuthenticated &&

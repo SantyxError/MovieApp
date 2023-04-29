@@ -53,7 +53,7 @@ export const DiscoverTV = (): ReactElement => {
       <h2 className={styles.title}>Populares en TV</h2>
       <div className={styles.filmContainer}>
         {data.results.map((tv) => {
-          return <TVCard imgUrl={imgUrl} tv={tv} />;
+          return <TVCard imgUrl={imgUrl} tv={tv} key={tv.id}/>;
         })}
       </div>
     </section>

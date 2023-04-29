@@ -1,38 +1,68 @@
 import { ReactElement, useEffect, useState } from "react";
 import styles from "./MyFavorites.module.scss";
+import { Film } from "../../models/Films.model";
+import { Spinner } from "../../components/Spinner/Spinner";
+import { FilmCard } from "../../components/FilmCard/FilmCard";
 
-interface Favourite {
-  id: number;
-  user_id: number;
+interface Favorites {
+  id: string
+  user_id: string
 }
 
 export const MyFavorites = (): ReactElement => {
-  const [favorites, setFavorites] = useState<Array<Favourite> | undefined>(
+  const [favorites, setFavorites] = useState<Array<Film> | undefined>(
     undefined
   );
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
-  const baseUrl: string = import.meta.env.VITE_BASE_URL_LOCALHOST;
-  const url = `${baseUrl}/api/favorites`;
+  const baseUrlFavorites: string = import.meta.env.VITE_BASE_URL_LOCALHOST;
+  const urlFavorites = `${baseUrlFavorites}/api/favorites`;
 
-  const fetchData = async (): Promise<void> => {
-    const response = await fetch(url);
-    const data = await response.json();
+  const key: string = import.meta.env.VITE_API_KEY;
+  const baseUrl: string = import.meta.env.VITE_BASE_URL;
 
-    setFavorites(data);
-  };
+  const imgUrl: string = import.meta.env.VITE_IMG_BASE;
 
   useEffect(() => {
-    fetchData();
+    fetch(urlFavorites)
+      .then(response => response.json())
+      .then(data => {
+        const promises = data.map((film: Favorites) => {
+          return fetch(`${baseUrl}/movie/${film.id}?api_key=${key}`)
+            .then(response => response.json())
+            .then(movie => movie);
+        });
+
+        Promise.all(promises).then(films => {
+          setFavorites(films);
+        });
+      });
   }, []);
+ 
+  if (isLoading) {
+    return (
+      <div className={styles.spinnerContainer}>
+        <Spinner />
+      </div>
+    );
+  }
 
   if (favorites === undefined) {
-    return <div>No existen favoritos</div>;
+    return (
+      <div className={styles.spinnerContainer}>
+        No existen favoritos
+      </div>
+    );
   }
 
   return (
-    <div style={{ color: "white" }}>
-      <span>{favorites[0].id}</span>
-      <span>{favorites[0].user_id}</span>
-    </div>
+    <section className={styles.container}>
+      <h2 className={styles.title}>Mis favoritos</h2>
+      <div className={styles.filmContainer}>
+        {favorites.map((film) => {
+          return <FilmCard imgUrl={imgUrl} film={film} key={film.id}/>;
+        })}
+      </div>
+    </section>
   );
 };
