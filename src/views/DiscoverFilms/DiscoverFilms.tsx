@@ -51,8 +51,7 @@ export const DiscoverFilms = (): ReactElement => {
 
   return (
     <section className={styles.container}>
-      <h2 className={styles.title}>Últimas Películas</h2>
-      <Hero/>
+      <Hero imgUrl={imgUrl} film={data.results[0]} title="Últimos estrenos"/>
       <div className={styles.filmContainer}>
         {data.results.map((film) => {
           return <FilmCard imgUrl={imgUrl} film={film} key={film.id}/>;

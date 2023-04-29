@@ -1,11 +1,13 @@
 @import "../../styles/settings/mediaQueries.scss";
 
 .menu {
-  display: flex;
-  justify-content: space-around;
-  gap: var(--space-2xl);
-  position: sticky;
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  justify-items: center;
+  position: fixed;
   bottom: 0;
+  left: 0;
+  width: 100%;
   background-color: var(--black);
   color: var(--blue-4);
   padding: var(--space-l);

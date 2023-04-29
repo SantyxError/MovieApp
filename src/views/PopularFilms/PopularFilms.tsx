@@ -3,6 +3,7 @@ import styles from "./PopularFilms.module.scss";
 import { Films } from "../../models/Films.model";
 import { FilmCard } from "../../components/FilmCard/FilmCard";
 import { Spinner } from "../../components/Spinner/Spinner";
+import { Hero } from "../../components/Hero/Hero";
 
 export const PopularFilms = (): ReactElement => {
   const [data, setData] = useState<Films | undefined>(undefined);
@@ -50,7 +51,7 @@ export const PopularFilms = (): ReactElement => {
 
   return (
     <section className={styles.container}>
-      <h2 className={styles.title}>Películas Populares</h2>
+     <Hero imgUrl={imgUrl} film={data.results[0]} title="Películas más populares"/>
       <div className={styles.filmContainer}>
         {data.results.map((film) => {
           return <FilmCard imgUrl={imgUrl} film={film} key={film.id}/>;

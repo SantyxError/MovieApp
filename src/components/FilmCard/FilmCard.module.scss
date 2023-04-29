@@ -6,8 +6,9 @@
   background-color: var(--gray-9);
   width: 90%;
   margin-bottom: var(--space-3xl);
-  box-shadow: 0px 5px 10px 5px rgba(0,0,0,0.75);
-  border-radius: var(--size-m);
+  box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.75);
+  border-radius: var(--size-xs);
+  overflow: hidden;
 }
 
 .imgWrapper {
@@ -18,41 +19,44 @@
 
 .poster {
   width: 100%;
-  border-top-left-radius: var(--size-m);
-  border-top-right-radius: var(--size-m);
+  height: 220px;
+
+  @media #{$fromTablet} {
+    height: auto;
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--size-l);
 }
 
 .vote {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width:35%;
-  background-color: green;
-  padding: var(--size-xs) var(--size-s);
+  width: 50%;
   text-align: center;
   font-weight: bold;
-  font-size: var(--size-l);
-  box-shadow: 0px 5px 10px 5px rgba(0,0,0,0.75);
-  border-top-right-radius: var(--size-m);
   display: flex;
-  justify-content: center;
-  align-items: center;
   gap: var(--size-s);
+  color: lightgreen;
+
+  .icon {
+    color: rgb(217, 217, 80);
+  }
+
+  @media #{$fromLaptop} {
+    font-size: var(--size-l);
+  }
 }
 
-.icon{
+.icon {
   width: var(--size-m);
   height: var(--size-m);
 }
 
 .favoriteButton {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: var(--space-s);
-  background-color: var(--blue-6);
-
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
 }
@@ -67,12 +71,15 @@
 }
 
 .infoButton {
-  background-color: var(--blue-6);
-  padding: var(--size-xs);
-  width: 90%;
-  border-radius: var(--size-s);
-  transition: all 0.3s;
+  display: none;
+
   @media #{$fromLaptop} {
+    background-color: var(--blue-6);
+    padding: var(--size-xs);
+    width: 90%;
+    border-radius: var(--size-s);
+    transition: all 0.3s;
+
     &:hover {
       cursor: pointer;
       color: var(--blue-8);
@@ -87,14 +94,23 @@
   flex-direction: column;
   justify-content: center;
   gap: var(--space-m);
+  width: 100%;
 }
 
-.filmTitle{
-  font-size: var(--size-l);
+.filmTitle {
+  display: none;
+
+  @media #{$fromLaptop} {
+  font-size: var(--size-m);
   font-weight: 700;
   text-align: center;
+  }
 }
 
-.filmDate{
-  text-align: center;
+.filmDate {
+  display: none;
+
+  @media #{$fromLaptop} {
+    text-align: center;
+  }
 }

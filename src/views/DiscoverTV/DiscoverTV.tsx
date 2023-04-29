@@ -3,6 +3,7 @@ import { ReactElement, useEffect, useState } from "react";
 import { DiscoverTV as DiscoverTVModel } from "../../models/TV.model";
 import { TVCard } from "../../components/TVCard/TVCard";
 import { Spinner } from "../../components/Spinner/Spinner";
+import { Hero } from "../../components/Hero/Hero";
 
 export const DiscoverTV = (): ReactElement => {
   const [data, setData] = useState<DiscoverTVModel | undefined>(undefined);
@@ -50,10 +51,10 @@ export const DiscoverTV = (): ReactElement => {
 
   return (
     <section className={styles.container}>
-      <h2 className={styles.title}>Populares en TV</h2>
+      <Hero imgUrl={imgUrl} tv={data.results[2]} title="Programas más populares" />
       <div className={styles.filmContainer}>
         {data.results.map((tv) => {
-          return <TVCard imgUrl={imgUrl} tv={tv} key={tv.id}/>;
+          return <TVCard imgUrl={imgUrl} tv={tv} key={tv.id} />;
         })}
       </div>
     </section>
