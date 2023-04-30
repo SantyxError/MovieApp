@@ -10,8 +10,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 
 export const Navbar = (): ReactElement => {
 
-  const {user,isAuthenticated} = useAuth0()
-  
+  const { isAuthenticated } = useAuth0()
+
   const navigate = useNavigate();
 
   const navigateToHome = (): void => {
@@ -30,11 +30,14 @@ export const Navbar = (): ReactElement => {
     navigate("/top");
   };
 
+  const navigateToFavorites = (): void => {
+    navigate("/favorites");
+  };
+
   return (
     <nav className={styles.navbar}>
       <img src={logo} alt="movie app logo" className={styles.logo} />
-      <LoginButton />
-      <LogoutButton/>
+
       <div className={styles.menuWrapper}>
         <ul className={styles.menu}>
           <li className={styles.item} onClick={navigateToHome}>
@@ -46,10 +49,13 @@ export const Navbar = (): ReactElement => {
           <li className={styles.item} onClick={navigateToTV}>
             Programas más Populares
           </li>
-          {isAuthenticated &&
           <li className={styles.item} onClick={navigateToTop}>
             Películas más Valoradas
           </li>
+          {isAuthenticated &&
+            <li className={styles.item} onClick={navigateToFavorites}>
+              Mis Favoritos
+            </li>
           }
         </ul>
 
@@ -62,6 +68,11 @@ export const Navbar = (): ReactElement => {
             <IonIcon icon={search} />
           </button>
         </form>
+
+        {isAuthenticated ?
+          <LogoutButton /> : <LoginButton />
+        }
+
       </div>
     </nav>
   );

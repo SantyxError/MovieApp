@@ -2,7 +2,7 @@
 
 .menu {
   display: grid;
-  grid-template-columns: repeat(4,1fr);
+  grid-template-columns: var(--gridColumns);
   justify-items: center;
   position: fixed;
   bottom: 0;
@@ -10,7 +10,7 @@
   width: 100%;
   background-color: var(--black);
   color: var(--blue-4);
-  padding: var(--space-l);
+  padding: var(--space-m);
   border-top: 1px solid var(--blue-4);
   box-shadow: 0px -5px 10px 5px rgba(0, 0, 0, 0.75);
 
@@ -25,7 +25,7 @@
   justify-content: end;
   align-items: center;
   flex: 1 1 0px;
-  font-size: var(--size-m);
+  font-size: var(--size-s);
 }
 
 .item:active {

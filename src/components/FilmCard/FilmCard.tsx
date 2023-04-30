@@ -20,6 +20,7 @@ export const FilmCard: FC<Props> = ({ imgUrl, film }): ReactElement => {
   const baseUrl = import.meta.env.VITE_BASE_URL_LOCALHOST;
   const url = `${baseUrl}/api/favorites`
 
+
   const handleSaveMovie = async (): Promise<void> => {
     try {
       setIsLoading(true);
@@ -44,13 +45,6 @@ export const FilmCard: FC<Props> = ({ imgUrl, film }): ReactElement => {
     <div className={styles.film}>
       <div className={styles.imgWrapper}>
         <img src={imgUrl + film.poster_path} className={styles.poster} />
-        {/* <div className={styles.vote}>
-          <IonIcon icon={star} className={styles.icon} />
-          {film.vote_average.toFixed(1)}
-        </div> */}
-
-
-
       </div>
       <div className={styles.dataWrapper}>
         <div className={styles.dataFilm}>
@@ -58,7 +52,6 @@ export const FilmCard: FC<Props> = ({ imgUrl, film }): ReactElement => {
             <div className={styles.vote}>
               <IonIcon icon={star} className={styles.icon} />
               {film.vote_average.toFixed(1)}
-             
             </div>
             {isAuthenticated &&
                 <button className={styles.favoriteButton} onClick={handleSaveMovie}>

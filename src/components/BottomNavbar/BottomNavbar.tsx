@@ -1,3 +1,4 @@
+import { useAuth0 } from "@auth0/auth0-react";
 import styles from "./BottomNavbar.module.scss";
 import { IonIcon } from "@ionic/react";
 import {
@@ -5,12 +6,14 @@ import {
   trophyOutline,
   filmOutline,
   tvOutline,
+  heartOutline
 } from "ionicons/icons";
-import { ReactElement } from "react";
+import { ReactElement, CSSProperties } from "react";
 import { NavigateFunction, useNavigate } from "react-router-dom";
 
 export const BottomNavbar = (): ReactElement => {
   const navigate: NavigateFunction = useNavigate();
+  const { isAuthenticated } = useAuth0()
 
   const navigateToHome = (): void => {
     navigate("/");
@@ -28,12 +31,20 @@ export const BottomNavbar = (): ReactElement => {
     navigate("/top");
   };
 
+  const navigateToFavorites = (): void => {
+    navigate("/favorites");
+  };
+
+  const styleProps = {
+    '--gridColumns': `${isAuthenticated ? 'repeat(5,1fr)' : 'repeat(4,1fr)'}`
+  } as CSSProperties
+
   return (
-    <ul className={styles.menu}>
+    <ul className={styles.menu} style={styleProps}>
       <li className={styles.item}>
         <button onClick={navigateToHome}>
           <IonIcon icon={compassOutline} className={styles.icon} />
-          <span>Descubrir</span>
+          <span>Explora</span>
         </button>
       </li>
       <li className={styles.item}>
@@ -54,6 +65,15 @@ export const BottomNavbar = (): ReactElement => {
           <span>Top</span>
         </button>
       </li>
+
+      {isAuthenticated &&
+        <li className={styles.item}>
+          <button onClick={navigateToFavorites}>
+            <IonIcon icon={heartOutline} className={styles.icon} />
+            <span>Favs</span>
+          </button>
+        </li>
+      }
     </ul>
   );
 };
