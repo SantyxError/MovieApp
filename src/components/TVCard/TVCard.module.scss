@@ -1,13 +1,14 @@
 @import "../../styles/settings/mediaQueries.scss";
 
-.container {
+.tv {
   display: flex;
   flex-direction: column;
   background-color: var(--gray-9);
   width: 90%;
   margin-bottom: var(--space-3xl);
   box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.75);
-  border-radius: var(--size-m);
+  border-radius: var(--size-xs);
+  overflow: hidden;
 }
 
 .imgWrapper {
@@ -18,22 +19,50 @@
 
 .poster {
   width: 100%;
-  border-top-left-radius: var(--size-m);
-  border-top-right-radius: var(--size-m);
+  height: 220px;
+
+  &:hover{
+    cursor: pointer;
+  }
+
+  @media #{$fromTablet} {
+    height: 425px;
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: var(--size-l);
 }
 
 .vote {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 25%;
-  background-color: green;
-  padding: var(--size-s) var(--size-l);
+  width: 50%;
   text-align: center;
   font-weight: bold;
-  font-size: var(--size-l);
-  box-shadow: 0px 5px 10px 5px rgba(0, 0, 0, 0.75);
-  border-top-right-radius: var(--size-m);
+  display: flex;
+  gap: var(--size-s);
+  color: lightgreen;
+
+  .icon {
+    color: rgb(217, 217, 80);
+  }
+
+  @media #{$fromLaptop} {
+    font-size: var(--size-l);
+  }
+}
+
+.icon {
+  width: var(--size-m);
+  height: var(--size-m);
+}
+
+.favoriteButton {
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .dataWrapper {
@@ -46,25 +75,46 @@
 }
 
 .infoButton {
-  background-color: var(--blue-6);
-  padding: var(--size-xs);
-  width: 90%;
-  border-radius: var(--size-s);
+  display: none;
+
+  @media #{$fromLaptop} {
+    background-color: var(--blue-6);
+    padding: var(--size-xs);
+    width: 90%;
+    border-radius: var(--size-s);
+    transition: all 0.3s;
+
+    &:hover {
+      cursor: pointer;
+      color: var(--blue-8);
+      background-color: var(--blue-4);
+      transform: scale(1.05);
+    }
+  }
 }
 
-.data {
+.dataTV {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: var(--space-m);
+  width: 100%;
 }
 
-.title {
-  font-size: var(--size-l);
+.tvTitle {
+  display: none;
+
+  @media #{$fromLaptop} {
+  font-size: var(--size-m);
   font-weight: 700;
   text-align: center;
+  }
 }
 
-.date {
-  text-align: center;
+.tvDate {
+  display: none;
+
+  @media #{$fromLaptop} {
+    text-align: center;
+  }
 }

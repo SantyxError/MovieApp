@@ -1,0 +1,118 @@
+@import "../../styles/settings/mediaQueries.scss";
+
+.container {
+  color: var(--white);
+  width: 100%;
+  margin-bottom: 120px;
+
+  @media #{$fromLaptop} {
+    background-image:
+      linear-gradient(180deg, rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 0.7525385154061625) 50%, rgba(17, 17, 17, 1) 100%),
+      var(--backgroundImage);
+    background-size: cover;
+    background-position: center;
+    margin-bottom: unset;
+  }
+}
+
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: var(--white);
+}
+
+.wrapper {
+
+  @media #{$fromLaptop} {
+    display: flex;
+    justify-content: center;
+    padding-top: var(--space-3xl);
+  }
+}
+
+.film {
+  position: relative;
+
+  @media #{$fromLaptop} {
+    display: flex;
+    height: 100%;
+
+    max-width: 900px;
+  }
+}
+
+.background {
+  height: 300px;
+  background-image:
+    linear-gradient(180deg, rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 0.7525385154061625) 50%, rgba(17, 17, 17, 1) 100%),
+    var(--backgroundImage);
+  background-size: cover;
+
+  @media #{$fromLaptop} {
+    display: none;
+  }
+}
+
+.poster {
+  position: absolute;
+  top: 100px;
+  left: var(--space-l);
+  width: 150px;
+  height: 200px;
+  border-radius: var(--size-2xs);
+  object-fit: contain;
+
+  @media #{$fromLaptop} {
+    position: relative;
+    top: unset;
+    left: unset;
+    width: 240px;
+    height: 400px;
+    object-fit: cover;
+  }
+}
+
+.info {
+  padding: 20px var(--space-l) 0;
+
+  @media #{$fromLaptop} {
+    padding-top: 70px;
+  }
+}
+
+.returnButton {
+  display: flex;
+  gap: var(--space-m);
+  padding: var(--space-l);
+}
+
+.returnButtonLaptop {
+  display: none;
+
+  @media #{$fromLaptop} {
+    display: flex;
+    gap: var(--space-m);
+    padding: var(--space-l) 0;
+  }
+}
+
+.button {
+  background-color: var(--blue-7);
+  padding: var(--space-m) var(--space-l);
+  border-radius: var(--size-2xs);
+}
+
+.vote {
+  font-weight: bold;
+
+  .icon {
+    margin-right: var(--space-s);
+    color: rgb(217, 217, 80);
+  }
+
+  @media #{$fromLaptop} {
+    font-size: var(--size-l);
+  }
+}

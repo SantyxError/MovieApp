@@ -6,6 +6,7 @@ import { IonIcon } from "@ionic/react";
 import { heart, star } from "ionicons/icons";
 import { useAuth0 } from "@auth0/auth0-react";
 import { SmallSpinner } from "../SmallSpinner/SmallSpinner";
+import { NavigateFunction, useNavigate } from "react-router-dom";
 
 interface Props {
   imgUrl: string;
@@ -15,6 +16,7 @@ interface Props {
 export const FilmCard: FC<Props> = ({ imgUrl, film }): ReactElement => {
 
   const { user, isAuthenticated } = useAuth0()
+  const navigate: NavigateFunction = useNavigate();
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const baseUrl = import.meta.env.VITE_BASE_URL_LOCALHOST;
@@ -41,10 +43,14 @@ export const FilmCard: FC<Props> = ({ imgUrl, film }): ReactElement => {
     }
   };
 
+  const navigateToItemInfo= (): void => {
+    navigate(`/film/${film.id}`);
+  };
+
   return (
     <div className={styles.film}>
       <div className={styles.imgWrapper}>
-        <img src={imgUrl + film.poster_path} className={styles.poster} />
+        <img src={imgUrl + film.poster_path} className={styles.poster} alt={film.title} onClick={navigateToItemInfo}/>
       </div>
       <div className={styles.dataWrapper}>
         <div className={styles.dataFilm}>

@@ -1,15 +1,18 @@
 @import "../../styles/settings/mediaQueries.scss";
 
 
-.container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--gray-9);
+.container {
+  display: none;
 
+  @media #{$fromLaptop} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gray-9);
+  }
 }
 
-.text{
+.text {
   color: var(--white);
   text-align: center;
   padding: var(--size-l);
