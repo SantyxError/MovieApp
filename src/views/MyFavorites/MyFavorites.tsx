@@ -38,7 +38,7 @@ export const MyFavorites = (): ReactElement => {
         });
       });
   }, []);
- 
+
   if (isLoading) {
     return (
       <div className={styles.spinnerContainer}>
@@ -56,13 +56,15 @@ export const MyFavorites = (): ReactElement => {
   }
 
   return (
-    <section className={styles.container}>
-      <h2 className={styles.title}>Mis favoritos</h2>
-      <div className={styles.filmContainer}>
-        {favorites.map((film) => {
-          return <FilmCard imgUrl={imgUrl} film={film} key={film.id}/>;
-        })}
-      </div>
-    </section>
+    <>
+      <section className={styles.container}>
+        <h2 className={styles.title}>Mis favoritos</h2>
+        <div className={styles.filmContainer}>
+          {favorites.map((film) => {
+            return <FilmCard imgUrl={imgUrl} film={film} key={film.id} />;
+          })}
+        </div>
+      </section>
+    </>
   );
 };

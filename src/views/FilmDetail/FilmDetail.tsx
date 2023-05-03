@@ -87,7 +87,7 @@ export const FilmDetail = () => {
               {data.vote_average.toFixed(1)}
             </div>
             <h1>{data.title} ({formatDate(data.release_date)})</h1>
-            <p>{data.overview}</p>
+            <p className={styles.overview}>{data.overview}</p>
             <button className={styles.button}>Ver trailer</button>
           </div>
         </div>

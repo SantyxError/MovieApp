@@ -1,13 +1,13 @@
 @import "../../styles/settings/mediaQueries.scss";
 
 .container {
-  justify-items: center;
   width: 100%;
 }
 
 .filmContainer {
   display: grid;
   grid-template-columns: repeat(2,1fr);
+  grid-row-gap: var(--space-3xl);
   justify-items: center;
   padding: var(--space-l);
   max-width: 100vw;

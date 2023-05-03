@@ -2,13 +2,14 @@
 
 .container{
   background-image: 
-  linear-gradient(180deg, rgba(17,17,17,1) 0%, rgba(17,17,17,0.1250875350140056) 35%, rgba(17,17,17,0.004639355742296902) 50%, rgba(17,17,17,0.13068977591036413) 65%, rgba(17,17,17,1) 100%),
+  linear-gradient(180deg, rgba(17,17,17,1) 0%, rgba(17,17,17,0.7525385154061625) 50%, rgba(17,17,17,1) 100%),
   var(--backgroundImageMobile);
   background-size: cover;
   background-position: center;
-  height: 600px;
+  height: fit-content;
   width: 100%;
   padding: 0 var(--space-l);
+  margin-bottom: var(--space-3xl);
 
   @media #{$fromTablet} {
     background-image: 
@@ -19,10 +20,50 @@
 }
 
 .mainTitle{
-  color: var(--white);
+  color: var(--orange-5);
+  margin-bottom: 50px;
 }
 
 
 .movieTitle{
   color: var(--white)
+}
+
+.sinopsis{
+  color: var(--white);
+  line-height: var(--space-l);
+  font-size: var(--size-s);
+}
+
+.infoWrapper{
+display: flex;
+justify-content: center;
+justify-content:space-between;
+}
+
+.buttonWrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-m);
+  color: var(--white);
+}
+
+.buttonTrailer {
+  width: 150px;
+  border: 3px solid var(--orange-4);
+  padding: var(--space-xs) var(--space-s);
+  border-radius: var(--size-xs);
+}
+
+.buttonDetail {
+  width: 150px;
+  border: 3px solid var(--orange-6);
+  padding: var(--space-xs) var(--space-s);
+  border-radius: var(--size-xs);
+}
+
+.poster{
+  height: 200px;
 }

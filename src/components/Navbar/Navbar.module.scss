@@ -9,11 +9,16 @@
   color: var(--white);
   background-color: var(--black);
 
-  @media #{$fromLaptop} {}
+  @media #{$fromLaptop} {
+  }
 }
 
 .logo {
   width: var(--size-3xl);
+  @media #{$fromLaptop} {
+    width: var(--size-6xl);
+    content:url("../../assets/img/logo_texto_rojo.svg");
+  }
 }
 
 .searchWrapper {
@@ -44,7 +49,7 @@
 }
 
 .searchButton {
-  background-color: var(--blue-6);
+  background-color: var(--orange-4);
   padding: var(--size-2xs) var(--size-xs);
   border-top-right-radius: var(--size-xs);
   border-bottom-right-radius: var(--size-xs);

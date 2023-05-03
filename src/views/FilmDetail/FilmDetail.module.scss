@@ -49,6 +49,7 @@
     linear-gradient(180deg, rgba(17, 17, 17, 1) 0%, rgba(17, 17, 17, 0.7525385154061625) 50%, rgba(17, 17, 17, 1) 100%),
     var(--backgroundImage);
   background-size: cover;
+  background-position: center;
 
   @media #{$fromLaptop} {
     display: none;
@@ -82,6 +83,12 @@
   }
 }
 
+.overview {
+  line-height: var(--space-l);
+  font-size: var(--size-s);
+  padding-bottom: var(--space-l);
+}
+
 .returnButton {
   display: flex;
   gap: var(--space-m);
@@ -99,7 +106,7 @@
 }
 
 .button {
-  background-color: var(--blue-7);
+  background-color: var(--orange-6);
   padding: var(--space-m) var(--space-l);
   border-radius: var(--size-2xs);
 }

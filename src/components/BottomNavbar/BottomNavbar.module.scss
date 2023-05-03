@@ -9,9 +9,9 @@
   left: 0;
   width: 100%;
   background-color: var(--black);
-  color: var(--blue-4);
+  color: var(--orange-5);
   padding: var(--space-m);
-  border-top: 1px solid var(--blue-4);
+  border-top: 1px solid var(--orange-5);
   box-shadow: 0px -5px 10px 5px rgba(0, 0, 0, 0.75);
 
   @media #{$fromLaptop} {
@@ -36,4 +36,5 @@
 .icon {
   width: var(--size-xl);
   height: var(--size-xl);
+  
 }

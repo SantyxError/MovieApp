@@ -4,20 +4,23 @@ import { Films } from "../../models/Films.model";
 import { FilmCard } from "../../components/FilmCard/FilmCard";
 import { Spinner } from "../../components/Spinner/Spinner";
 import { Hero } from "../../components/Hero/Hero";
+import { Pagination } from "../../components/Pagination/Pagination";
 
 export const PopularFilms = (): ReactElement => {
   const [data, setData] = useState<Films | undefined>(undefined);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [page, setPage] = useState<number>(1)
+  const [totalPages, setTotalPages] = useState<number>(0)
 
   const key: string = import.meta.env.VITE_API_KEY;
   const baseUrl: string = import.meta.env.VITE_BASE_URL;
-  const url: string = `${baseUrl}/movie/popular?api_key=${key}&language=es-ES&sort_by=popularity.desc&page=1`;
+  const url: string = `${baseUrl}/movie/popular?api_key=${key}&language=es-ES&sort_by=popularity.desc&page=${page}`;
 
   const imgUrl: string = import.meta.env.VITE_IMG_BASE;
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [page]);
 
   const fetchData = async (): Promise<void> => {
     try {
@@ -26,6 +29,7 @@ export const PopularFilms = (): ReactElement => {
       const data = await response.json();
 
       setData(data);
+      setTotalPages(90)
     } catch (error) {
       console.log("Error:", error);
     } finally {
@@ -50,13 +54,16 @@ export const PopularFilms = (): ReactElement => {
   }
 
   return (
-    <section className={styles.container}>
-     <Hero imgUrl={imgUrl} film={data.results[0]} title="Películas más populares"/>
-      <div className={styles.filmContainer}>
-        {data.results.map((film) => {
-          return <FilmCard imgUrl={imgUrl} film={film} key={film.id}/>;
-        })}
-      </div>
-    </section>
+    <>
+      <section className={styles.container}>
+        <Hero imgUrl={imgUrl} film={data.results[0]} title="Películas más populares" />
+        <div className={styles.filmContainer}>
+          {data.results.map((film) => {
+            return <FilmCard imgUrl={imgUrl} film={film} key={film.id} />;
+          })}
+        </div>
+      </section>
+      <Pagination page={page} totalPages={totalPages} setPage={setPage} setTotalPages={setTotalPages}/>
+    </>
   );
 };

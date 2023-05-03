@@ -1,0 +1,32 @@
+@import "../../styles/settings/mediaQueries.scss";
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--space-m);
+  padding: var(--space-s) 0;
+  color: var(--gray-11);
+}
+
+.container button {
+  background: var(--orange-5);
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
+  border: unset;
+  font-size: var(--size-m);
+  font-weight: 600;
+}
+
+.container button:hover {
+  background: var(--orange-2);
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.pageNumber {
+  color: var(--orange-2);
+  border: 2px solid var(--orange-5);
+  padding: var(--size-2xs) var(--size-m);
+}

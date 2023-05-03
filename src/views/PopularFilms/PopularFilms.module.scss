@@ -1,7 +1,6 @@
 @import "../../styles/settings/mediaQueries.scss";
 
 .container {
-  justify-items: center;
   width: 100%;
 }
 
@@ -9,6 +8,7 @@
   display: grid;
   grid-template-columns: repeat(2,1fr);
   justify-items: center;
+  grid-row-gap: var(--space-3xl);
   padding: var(--space-l);
   max-width: 100vw;
   color: var(--white);

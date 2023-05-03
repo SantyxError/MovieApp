@@ -1,5 +1,5 @@
 import styles from "./Navbar.module.scss";
-import logo from "../../assets/img/logo.png";
+import logo from "../../assets/img/logo_rojo.svg";
 import { IonIcon } from "@ionic/react";
 import { search } from "ionicons/icons";
 import { useNavigate } from "react-router-dom";
