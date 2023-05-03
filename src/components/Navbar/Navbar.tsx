@@ -36,7 +36,7 @@ export const Navbar = (): ReactElement => {
 
   return (
     <nav className={styles.navbar}>
-      <img src={logo} alt="movie app logo" className={styles.logo} />
+      <img src={logo} alt="movie app logo" className={styles.logo} onClick={navigateToHome} />
 
       <div className={styles.menuWrapper}>
         <ul className={styles.menu}>

@@ -15,9 +15,14 @@
 
 .logo {
   width: var(--size-3xl);
+
   @media #{$fromLaptop} {
     width: var(--size-6xl);
     content:url("../../assets/img/logo_texto_rojo.svg");
+  }
+
+  &:hover{
+    cursor: pointer;
   }
 }
 

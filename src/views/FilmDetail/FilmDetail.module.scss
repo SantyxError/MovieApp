@@ -12,6 +12,7 @@
     background-size: cover;
     background-position: center;
     margin-bottom: unset;
+    box-shadow: inset 0 -5px 0  var(--gray-11);
   }
 }
 
@@ -123,3 +124,5 @@
     font-size: var(--size-l);
   }
 }
+
+
