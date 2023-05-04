@@ -26,11 +26,6 @@
   }
 }
 
-.searchWrapper {
-  display: flex;
-  height: var(--size-xl);
-}
-
 .menuWrapper {
   display: flex;
   align-items: center;
@@ -39,26 +34,6 @@
   @media #{$fromLaptop} {
     gap: var(--space-l);
   }
-}
-
-.searchBox {
-  width: 10rem;
-  border-top-left-radius: var(--size-xs);
-  border-bottom-left-radius: var(--size-xs);
-  padding: var(--size-2xs);
-  border-style: none;
-
-  &:focus-visible {
-    outline: unset;
-  }
-}
-
-.searchButton {
-  background-color: var(--orange-4);
-  padding: var(--size-2xs) var(--size-xs);
-  border-top-right-radius: var(--size-xs);
-  border-bottom-right-radius: var(--size-xs);
-  border: unset;
 }
 
 .menu {

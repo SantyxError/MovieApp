@@ -9,6 +9,7 @@ import { TopFilms } from "./views/TopFilms/TopFilms";
 import { MyFavorites } from "./views/MyFavorites/MyFavorites";
 import { FilmDetail } from "./views/FilmDetail/FilmDetail";
 import { TVDetail } from "./views/TVDetail/TVDetail";
+import { SearchResult } from "./views/SearchResult/SearchResult";
 
 const App: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const App: React.FC = () => {
           <Route path="/favorites" element={<MyFavorites />} />
           <Route path="/film/:id" element={<FilmDetail />} />
           <Route path="/tv/:id" element={<TVDetail />} />
+          <Route path="/search/:text" element={<SearchResult />} />
         </Route>
       </Routes>
     </BrowserRouter>

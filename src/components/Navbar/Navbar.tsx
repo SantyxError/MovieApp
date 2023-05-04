@@ -1,12 +1,11 @@
 import styles from "./Navbar.module.scss";
 import logo from "../../assets/img/logo_rojo.svg";
-import { IonIcon } from "@ionic/react";
-import { search } from "ionicons/icons";
 import { useNavigate } from "react-router-dom";
 import { ReactElement } from "react";
 import { LoginButton } from "../LoginButton/LoginButton";
 import { LogoutButton } from "../LogoutButton /LogoutButton";
 import { useAuth0 } from "@auth0/auth0-react";
+import { SearchBox } from "./SearchBox/SearchBox";
 
 export const Navbar = (): ReactElement => {
 
@@ -59,15 +58,7 @@ export const Navbar = (): ReactElement => {
           }
         </ul>
 
-        <form className={styles.searchWrapper}>
-          <input placeholder="Buscar película" className={styles.searchBox} />
-          <button
-            type="submit"
-            className={styles.searchButton}
-            aria-label="Búsqueda">
-            <IonIcon icon={search} />
-          </button>
-        </form>
+        <SearchBox/>
 
         {isAuthenticated ?
           <LogoutButton /> : <LoginButton />

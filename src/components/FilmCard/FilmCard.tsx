@@ -7,6 +7,7 @@ import { heart, star } from "ionicons/icons";
 import { useAuth0 } from "@auth0/auth0-react";
 import { SmallSpinner } from "../SmallSpinner/SmallSpinner";
 import { NavigateFunction, useNavigate } from "react-router-dom";
+import noImage from "../../assets/img/no-image.svg";
 
 interface Props {
   imgUrl: string;
@@ -21,7 +22,6 @@ export const FilmCard: FC<Props> = ({ imgUrl, film }): ReactElement => {
 
   const baseUrl = import.meta.env.VITE_BASE_URL_LOCALHOST;
   const url = `${baseUrl}/api/favorites`
-
 
   const handleSaveMovie = async (): Promise<void> => {
     try {
@@ -50,7 +50,7 @@ export const FilmCard: FC<Props> = ({ imgUrl, film }): ReactElement => {
   return (
     <div className={styles.film}>
       <div className={styles.imgWrapper}>
-        <img src={imgUrl + film.poster_path} className={styles.poster} alt={film.title} onClick={navigateToItemInfo}/>
+        <img src={film.poster_path ? imgUrl + film.poster_path : noImage} className={styles.poster} alt={film.title} onClick={navigateToItemInfo}/>
       </div>
       <div className={styles.dataWrapper}>
         <div className={styles.dataFilm}>
