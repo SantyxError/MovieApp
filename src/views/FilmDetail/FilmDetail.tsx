@@ -105,7 +105,7 @@ export const FilmDetail = () => {
         </div>
       </section>
 
-      <Modal id={data.id} isOpen={isOpenModal} onClose={handleCloseModal}/>
+      <Modal id={data.id} isOpen={isOpenModal} onClose={handleCloseModal}/> 
     </>
   )
 }

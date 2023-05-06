@@ -1,4 +1,4 @@
-import { FC, ReactElement, useState } from "react";
+import { CSSProperties, FC, ReactElement, useState } from "react";
 import styles from "./FilmCard.module.scss";
 import { Film } from "../../models/Films.model";
 import { formatDate } from "../_utils/formatDate";
@@ -43,29 +43,45 @@ export const FilmCard: FC<Props> = ({ imgUrl, film }): ReactElement => {
     }
   };
 
-  const navigateToItemInfo= (): void => {
+  const navigateToItemInfo = (): void => {
     navigate(`/film/${film.id}`);
   };
+
+  const colorVote = (vote: Film['vote_average']) => {
+    if (vote < 5) {
+      return 'red'
+    }
+
+    if (vote > 5 && vote < 7) {
+      return 'yellow'
+    }
+
+    return 'green'
+  }
+
+  const styleProps = {
+    '--vote': colorVote(film.vote_average),
+  } as CSSProperties
 
   return (
     <div className={styles.film}>
       <div className={styles.imgWrapper}>
-        <img src={film.poster_path ? imgUrl + film.poster_path : noImage} className={styles.poster} alt={film.title} onClick={navigateToItemInfo}/>
+        <img src={film.poster_path ? imgUrl + film.poster_path : noImage} className={styles.poster} alt={film.title} onClick={navigateToItemInfo} />
       </div>
       <div className={styles.dataWrapper}>
         <div className={styles.dataFilm}>
           <div className={styles.info}>
-            <div className={styles.vote}>
+            <div className={styles.vote} style={styleProps}>
               <IonIcon icon={star} className={styles.icon} />
               {film.vote_average.toFixed(1)}
             </div>
             {isAuthenticated &&
-                <button className={styles.favoriteButton} onClick={handleSaveMovie}>
-                  {isLoading ?
-                    <SmallSpinner />
-                    : <IonIcon icon={heart} className={styles.icon} />}
-                </button>
-              }
+              <button className={styles.favoriteButton} onClick={handleSaveMovie}>
+                {isLoading ?
+                  <SmallSpinner />
+                  : <IonIcon icon={heart} className={styles.icon} />}
+              </button>
+            }
           </div>
           <span className={styles.filmTitle}>{film.title}</span>
           <span className={styles.filmDate}>

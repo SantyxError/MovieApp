@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import styles from "./SearchResult.module.scss";
 import { Spinner } from "../../components/Spinner/Spinner";
 import { Search } from "../../models/Search.model";
-import { Film, Films } from "../../models/Films.model";
+import { Film } from "../../models/Films.model";
 import { FilmCard } from "../../components/FilmCard/FilmCard";
 
 export const SearchResult = (): ReactElement => {
@@ -25,6 +25,7 @@ export const SearchResult = (): ReactElement => {
         response.json())
       .then((data: Search) => {
         const promises = data.results.map((film: Film) => {
+          setIsLoading(true)
           return fetch(`${baseUrl}/movie/${film.id}?api_key=${key}`)
             .then(response => response.json())
             .then(movie => movie);
@@ -32,11 +33,12 @@ export const SearchResult = (): ReactElement => {
 
         Promise.all(promises).then(films => {
           setData(films);
+          setIsLoading(false)
         });
       });
   }, []);
 
-  if (isLoading) {
+  if (isLoading || data === undefined) {
     return (
       <div className={styles.spinnerContainer}>
         <Spinner />

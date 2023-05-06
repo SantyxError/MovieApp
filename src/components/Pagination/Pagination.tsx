@@ -5,10 +5,9 @@ interface Props {
   page: number,
   totalPages: number,
   setPage: React.Dispatch<React.SetStateAction<number>>
-  setTotalPages: React.Dispatch<React.SetStateAction<number>>
 }
 
-export const Pagination:FC <Props> = ({page, totalPages, setPage, setTotalPages}): ReactElement => {
+export const Pagination:FC <Props> = ({page, totalPages, setPage}): ReactElement => {
   const firstPage = () => {
     setPage(1)
   }

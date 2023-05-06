@@ -64,7 +64,7 @@ export const DiscoverFilms = (): ReactElement => {
       </div>
     </section>
 
-    <Pagination page={page} totalPages={totalPages} setPage={setPage} setTotalPages={setTotalPages}/>
+    <Pagination page={page} totalPages={totalPages} setPage={setPage}/>
     </>
   );
 };

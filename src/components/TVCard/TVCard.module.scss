@@ -9,8 +9,17 @@
   border-radius: var(--size-xs);
   overflow: hidden;
 
+  transition: all 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: inset 0px 0px 0px 2px var(--orange-5);;
+  }
+
   @media #{$fromTablet} {
     margin-bottom: var(--space-3xl);
+    width: 90%;
   }
 }
 
@@ -29,7 +38,10 @@
   }
 
   @media #{$fromTablet} {
+    border-top-left-radius: var(--size-xs);
+    border-top-right-radius: var(--size-xs);
     height: 425px;
+    padding: 2px;
   }
 }
 

@@ -1,4 +1,4 @@
-import { FC, ReactNode, useEffect, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import styles from './Modal.module.scss';
 import { IonIcon } from "@ionic/react";
 import { close } from "ionicons/icons";
@@ -18,7 +18,8 @@ export const Modal: FC<Props> = ({ id, isOpen, onClose }) => {
   const key: string = import.meta.env.VITE_API_KEY;
   const baseUrl: string = import.meta.env.VITE_BASE_URL;
   const url: string = `${baseUrl}/movie/${id}/videos?api_key=${key}&language=es-ES`;
-  
+
+
   const fetchData = async (): Promise<void> => {
     try {
       setIsLoading(true);
@@ -32,6 +33,8 @@ export const Modal: FC<Props> = ({ id, isOpen, onClose }) => {
       setIsLoading(false);
     }
   };
+
+  console.log('data', data)
 
   useEffect(() => {
     fetchData();
@@ -57,9 +60,14 @@ export const Modal: FC<Props> = ({ id, isOpen, onClose }) => {
     <div onClick={onClose} className={`${isOpen ? styles.modal : styles.modalHide}`}>
       <div className={styles.modalContent}>
         <span className={styles.close}>
-            <IonIcon icon={close}/>
+          <IonIcon icon={close} />
         </span>
-        <iframe className={styles.trailer} src={`https://www.youtube.com/embed/${data.results[0].key}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+
+        {
+          data.results[0] ?
+            <iframe className={styles.trailer} src={`https://www.youtube.com/embed/${data.results[0].key}`} frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
+            : <p className={styles.notAvailableTrailer}>No hay ningún trailer disponible</p>
+        }
       </div>
     </div>
   )

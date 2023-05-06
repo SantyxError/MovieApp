@@ -57,8 +57,8 @@ export const DiscoverTV = (): ReactElement => {
     <>
     
     <section className={styles.container}>
-      <Hero imgUrl={imgUrl} tv={data.results[2]} title="Programas más populares" />
-      <div className={styles.filmContainer}>
+{      <Hero imgUrl={imgUrl} tv={data.results[5]} title="Programas más populares" />
+}      <div className={styles.filmContainer}>
         {data.results.map((tv) => {
           return <TVCard imgUrl={imgUrl} tv={tv} key={tv.id} />;
         })}

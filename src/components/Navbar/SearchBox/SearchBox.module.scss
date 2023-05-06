@@ -1,6 +1,10 @@
+@import "../../../styles/settings/mediaQueries.scss";
+
 .wrapper {
     display: flex;
     height: var(--size-xl);
+
+    
   }
   
 
@@ -14,10 +18,14 @@
     &:focus-visible {
       outline: unset;
     }
+
+    @media #{$fromLaptop} {
+      width: 15rem;
+    }
   }
   
   .button {
-    background-color: var(--orange-4);
+    background-color: var(--orange-5);
     padding: var(--size-2xs) var(--size-xs);
     border-top-right-radius: var(--size-xs);
     border-bottom-right-radius: var(--size-xs);
